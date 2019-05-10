@@ -4,13 +4,19 @@
     <h3>Nueva Propuesta</h3>
     <form>
       <div class="form-group">
-        <label for="exampleFormControlTextarea1">Example textarea</label>
-        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" 
+        <textarea class="form-control" id="textOfProposal" rows="3" 
         placeholder="Añade aquí el testo de tu propusta">
         </textarea>
       </div>
-      <button type="submit" class="btn btn-primary" v-on:click="SendProposal()">Enviar</button>
-      <button type="submit" class="btn-danger" v-on:click="CancelProposal()">Cancelar</button>
+      <div>
+        <div class="row">
+          <div class="col-8"></div>
+          <div class="col-4">
+            <button type="submit" class="btn btn-primary" v-on:click="SendProposal()">Enviar</button>
+            <button type="button" class="btn btn-danger" v-on:click="CancelProposal()">Cancelar</button>
+          </div>
+        </div>
+      </div>
     </form>
     </div>
   </div>
