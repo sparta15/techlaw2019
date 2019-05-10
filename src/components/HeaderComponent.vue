@@ -1,17 +1,17 @@
 <template>
     <div>
-      <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="#">TechLAw2019</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-          <div class="navbar-nav">
-            <a class="nav-item nav-link active" href="#"><router-link :to="{path:'/'}">Inicio</router-link></a>
-            <a class="nav-item nav-link" href="#"><router-link :to="{path:'/sobrenosotros'}">¿Quiénes somos?</router-link></a>
-          </div>
-        </div>
-      </nav>
+<b-navbar toggleable="lg" type="light" variant="light">
+    <b-navbar-brand href="#">TechLaw2019</b-navbar-brand>
+
+    <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
+
+    <b-collapse id="nav-collapse" is-nav>
+      <b-navbar-nav>
+        <b-nav-item><router-link :to="{path:'/'}">Inicio</router-link></b-nav-item>
+        <b-nav-item><router-link :to="{path:'/sobrenosotros'}">¿Quiénes somos?</router-link></b-nav-item>
+      </b-navbar-nav>
+    </b-collapse>
+  </b-navbar>
 </div>
 </template>
 
