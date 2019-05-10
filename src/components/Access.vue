@@ -2,7 +2,7 @@
   <div>
     <div class="container mt-5">
     <h3>Registro</h3>
-    <form>
+    <form v-on:submit.prevent="register">
       <div class="form-group">
         <label>Nombre</label>
         <input type="text" class="form-control" placeholder="Nombre" v-model="name">
@@ -27,12 +27,12 @@
         <label for="exampleInputPassword1">Confirma contraseña</label>
         <input type="password" class="form-control" id="exampleInputPassword2" placeholder="confirma contraseña" v-model="confirmpass">
       </div>
-      <button type="submit" class="btn btn-primary" v-on:click="register()">Registrarte</button>
+      <button type="submit" class="btn btn-primary">Registrarte</button>
     </form>
     </div>
     <div class="container mt-5">
     <h3>Acceso</h3>
-    <form>
+    <form v-on:submit.prevent="login">
       <div class="form-group">
         <label for="exampleInputEmail1">Email</label>
         <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Introduce tu email" v-model="loginemail">
@@ -41,7 +41,7 @@
         <label for="exampleInputPassword1">Contraseña</label>
         <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Contraseña" v-model="loginpass">
       </div>
-      <button type="submit" class="btn btn-primary" v-on:click="login()">Acceder</button>
+      <button type="submit" class="btn btn-primary">Acceder</button>
     </form>
     </div>
   </div>
@@ -59,6 +59,7 @@ export default {
       numICA: "",
       email:"",
       pass:"",
+      confirmpass: "",
       loginemail: "",
       loginpass:""
     }
