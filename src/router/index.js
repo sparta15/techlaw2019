@@ -1,5 +1,6 @@
 import Vue from 'vue';
 import Router from 'vue-router';
+import { auth } from '../firebase';
 import Home from '../components/Home.vue';
 import About from '../components/About.vue';
 import Access from '../components/Access.vue';
@@ -35,25 +36,67 @@ export default new Router({
         path: '/nuevapropuesta',
         name: 'CreateProposal',
         component: CreateProposal,
+        beforeEnter: (to, from, next) => {  
+          console.log(auth.currentUser) 
+          if(auth.currentUser !== null) {
+                next()
+              } else {
+                next('/')
+              } 
+            }
       },
       {
         path: '/confirmacion',
         name: 'ConfirmateProposal',
         component: ConfirmateProposal,
+        beforeEnter: (to, from, next) => {  
+          console.log(auth.currentUser) 
+          if(auth.currentUser !== null) {
+                next()
+              } else {
+                next('/')
+              } 
+            }
       },
       {
         path: '/perfilabogado',
         name: 'LawyerProfile',
         component: LawyerProfile,
-        meta: { requiresAuth: true },
+        beforeEnter: (to, from, next) => { 
+          console.log(auth.currentUser)  
+          if(auth.currentUser !== null) {
+                next()
+              } else {
+                next('/')
+              } 
+            }
       },      
       {
         path: '/propuestas',
         name: 'ListProposals',
         component: ListProposals,
-        meta: { requiresAuth: true },
+        beforeEnter: (to, from, next) => { 
+          console.log(auth.currentUser) 
+          if(auth.currentUser !== null) {
+                next()
+              } else {
+                next('/')
+              } 
+            }
       },
-
+      {
+        path: '/codigoconducta',
+        name: 'LawyerCode',
+        component: LawyerCode,
+        beforeEnter: (to, from, next) => { 
+          console.log(auth.currentUser)  
+          if(auth.currentUser !== null) {
+                next()
+              } else {
+                next('/')
+              } 
+            }
+      },
     ]
   })
   

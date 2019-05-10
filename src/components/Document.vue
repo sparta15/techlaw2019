@@ -1,9 +1,6 @@
 <template>
   <div class="container">
     <div class="row">
-      <div class="col-sm-4">c
-        <button type="button" class="btn btn-primary" v-on:click="CreateProposal()">Crear Propuesta</button>
-      </div>
       <div class="col-sm-8">
         <div class="card" style="width: 18rem;">
           <div class="card-body">
