@@ -35,7 +35,7 @@ export default {
             db.ref("proposals").child(uid).set({title: this.title, description: this.description, date: d});
         },
         logout(){
-            auth.signOut().then(()=>{    
+            auth.signOut().then(()=>{
             this.$router.replace("/")
         })
         }
