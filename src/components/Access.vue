@@ -64,14 +64,19 @@ export default {
       loginpass:""
     }
   },
+  created: function () {
+    console.log(auth.currentUser.uid)
+  },
   methods:{
          register(){
-            auth.createUserWithEmailAndPassword(this.email, this.password).then( 
+            auth.createUserWithEmailAndPassword(this.email, this.pass).then( 
               (user) => {   
                 var uid = auth.currentUser.uid;
                 db.ref("lawyers").child(uid).set({email: this.email, name: this.name, lastname: this.lastname, numICA: this.numICA});
 
-                this.$router.replace('/perfilabogado')
+
+                // this.$router.replace('perfilabogado')
+                this.$router.replace("/perfilabogado")
               },
             function(err) {
                 alert(err)
@@ -80,9 +85,10 @@ export default {
         },
 
         login(){
-            auth.signInWithEmailAndPassword(this.loginemail,this.loginpassword)
+            auth.signInWithEmailAndPassword(this.loginemail,this.loginpass)
             .then((user)=>{
-                this.$router.replace("/perfilabogado")
+              this.$router.replace("/perfilabogado")
+                // this.$router.replace("perfilabogado")
             })
             .catch((err)=>{
               alert(err)
