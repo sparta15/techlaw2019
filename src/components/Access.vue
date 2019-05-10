@@ -1,9 +1,7 @@
 <template>
   <div>
-    <p>¿Eres Abogado?</p>
-    <router-link :to="{path:'/acceso'}">
-    <button class="btn btn-success">Acceder</button>
-    </router-link>
+    <p>Login y registro</p>
+  
   </div>
 </template>
 

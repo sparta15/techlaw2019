@@ -12,15 +12,18 @@ import VueFire from 'vuefire'
 Vue.use(VueFire)
 Vue.use(BootstrapVue)
 
-// import firebaseConfig from './firebase'
-// import VueFire from 'vuefire'
-// import firebase from 'firebase/app'
-// Vue.use(VueFire)
-// firebase.initializeApp(firebaseConfig)
-
 Vue.config.productionTip = false
 
 new Vue({
   render: h => h(App),
   router,
 }).$mount('#app')
+
+router.beforeEach((to, from, next) => {
+  const requiresAuth = to.matched.some(record => record.meta.requiresAuth);
+  if(requiresAuth) {
+     next('/');
+  } else {
+    next();
+  }
+  });

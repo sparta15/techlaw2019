@@ -11,6 +11,6 @@ const firebaseApp = Firebase.initializeApp({
 });
 
 export const db = firebaseApp.database()
-export const storage = firebaseApp.storage()
+// export const storage = firebaseApp.storage()
 export const auth = firebaseApp.auth()
-export const msg = firebaseApp.messaging()
+// export const msg = firebaseApp.messaging()
