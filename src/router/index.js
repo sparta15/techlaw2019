@@ -3,6 +3,8 @@ import Router from 'vue-router';
 import Home from '../components/Home.vue';
 import About from '../components/About.vue';
 import Access from '../components/Access.vue';
+import CreatePurpose from '../components/CreatePurpose.vue';
+import ConfirmatePurpose from '../components/ConfirmatePurpose.vue';
 import LawyerProfile from '../components/LawyerProfile.vue';
 
 
@@ -25,6 +27,16 @@ export default new Router({
         path: '/acceso',
         name: 'Access',
         component: Access,
+      },
+      {
+        path: '/nuevapropuesta',
+        name: 'CreatePurpose',
+        component: CreatePurpose,
+      },
+      {
+        path: '/confirmacion',
+        name: 'ConfirmatePurpose',
+        component: ConfirmatePurpose,
       },
       {
         path: '/perfilabogado',

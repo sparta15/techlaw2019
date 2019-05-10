@@ -17,7 +17,7 @@ export default {
     },
     methods:{
         logout(){
-            auth.signOut().then(()=>{    
+            auth.signOut().then(()=>{
             this.$router.replace("/")
         })
         }

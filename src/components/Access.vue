@@ -65,12 +65,12 @@ export default {
     }
   },
   created: function () {
-    console.log(auth.currentUser.uid)
+    //console.log(auth.currentUser.uid)
   },
   methods:{
          register(){
             auth.createUserWithEmailAndPassword(this.email, this.pass).then( 
-              (user) => {   
+              (user) => {
                 var uid = auth.currentUser.uid;
                 db.ref("lawyers").child(uid).set({email: this.email, name: this.name, lastname: this.lastname, numICA: this.numICA});
 
