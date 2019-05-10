@@ -3,8 +3,8 @@ import Router from 'vue-router';
 import Home from '../components/Home.vue';
 import About from '../components/About.vue';
 import Access from '../components/Access.vue';
-import CreatePurpose from '../components/CreatePurpose.vue';
-import ConfirmatePurpose from '../components/ConfirmatePurpose.vue';
+import CreateProposal from '../components/CreateProposal.vue';
+import ConfirmateProposal from '../components/ConfirmateProposal.vue';
 import LawyerProfile from '../components/LawyerProfile.vue';
 
 
@@ -30,13 +30,13 @@ export default new Router({
       },
       {
         path: '/nuevapropuesta',
-        name: 'CreatePurpose',
-        component: CreatePurpose,
+        name: 'CreateProposal',
+        component: CreateProposal,
       },
       {
         path: '/confirmacion',
-        name: 'ConfirmatePurpose',
-        component: ConfirmatePurpose,
+        name: 'ConfirmateProposal',
+        component: ConfirmateProposal,
       },
       {
         path: '/perfilabogado',

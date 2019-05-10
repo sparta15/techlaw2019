@@ -9,8 +9,8 @@
         placeholder="Añade aquí el testo de tu propusta">
         </textarea>
       </div>
-      <button type="submit" class="btn btn-primary" v-on:click="SendPurpose()">Enviar</button>
-      <button type="submit" class="btn-danger" v-on:click="CancelPurpose()">Cancelar</button>
+      <button type="submit" class="btn btn-primary" v-on:click="SendProposal()">Enviar</button>
+      <button type="submit" class="btn-danger" v-on:click="CancelProposal()">Cancelar</button>
     </form>
     </div>
   </div>
@@ -27,7 +27,7 @@ export default {
     }
   },
   methods:{
-         SendPurpose(){
+         SendProposal(){
             auth.createUserWithEmailAndPassword(this.email, this.password).then( 
               (user) => {   
                 //var uid = auth.currentUser.uid;
@@ -40,7 +40,7 @@ export default {
             });
         },
 
-        CancelPurpose(){
+        CancelProposal(){
           this.$router.replace("/")
         }
   }
