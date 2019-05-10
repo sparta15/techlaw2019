@@ -4,6 +4,7 @@ import { auth } from '../firebase';
 import Home from '../components/Home.vue';
 import About from '../components/About.vue';
 import Access from '../components/Access.vue';
+import Register from '../components/Register.vue';
 import CreateProposal from '../components/CreateProposal.vue';
 import ConfirmateProposal from '../components/ConfirmateProposal.vue';
 import LawyerProfile from '../components/LawyerProfile.vue';
@@ -31,6 +32,11 @@ export default new Router({
         path: '/acceso',
         name: 'Access',
         component: Access,
+      },
+      {
+        path: '/registro',
+        name: 'Register',
+        component: Register,
       },
       {
         path: '/nuevapropuesta',

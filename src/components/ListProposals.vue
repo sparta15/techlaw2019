@@ -1,5 +1,5 @@
 <template>
-    <div v-if="proposals !== undefined">
+    <div v-if="proposals !== undefined" class="container">
         <div v-for="(prop, index) in proposals" v-bind:key="index">
             <div>
                 <p><strong>{{ prop.title }}</strong></p>
