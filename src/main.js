@@ -18,12 +18,3 @@ new Vue({
   render: h => h(App),
   router,
 }).$mount('#app')
-
-router.beforeEach((to, from, next) => {
-  const requiresAuth = to.matched.some(record => record.meta.requiresAuth);
-  if(requiresAuth) {
-     next('/');
-  } else {
-    next();
-  }
-  });

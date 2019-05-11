@@ -1,40 +1,26 @@
 <template>
   <div>
-    <div class="container mt-5">
-      <div class="row">
-          <h3>Acceso</h3>
+<div class="container mt-5">
+    <h3>Acceso</h3>
+    <form v-on:submit.prevent="login">
+      <div class="form-group">
+        <label>Email</label>
+        <input type="email" class="form-control" aria-describedby="emailHelp" placeholder="Introduce tu email" v-model="loginemail">
       </div>
-      <form v-on:submit.prevent="login">
-        <div class="form-group">
-          <div class="row">
-            <label for="exampleInputEmail1">Email</label>
-          </div>
-          <div class="row">
-            <div class="cl align-self-center">
-              <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Introduce tu email" v-model="loginemail">
-            </div>
-          </div>
-        </div>
-        <div class="form-group">
-          <div class="row">
-            <label for="exampleInputPassword1">Contraseña</label>
-          </div>
-          <div class="row">
-            <div class="cl align-self-center">
-              <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Contraseña" v-model="loginpass">
-            </div>
-          </div>
-        </div>
-        <div class="row">
-            <button type="submit" class="btn btn-primary">Acceder</button>
-        </div>
-        <div class="row">
-            <button type="submit" class="btn btn-secondary btn-sm" v-on:click="RedirectRegistry()">Registrarse</button>
-        </div>
-      </form>
+      <div class="form-group">
+        <label>Contraseña</label>
+        <input type="password" class="form-control"  placeholder="Contraseña" v-model="loginpass">
       </div>
+      <button type="submit" class="btn btn-primary">Acceder</button>
+      <div class="mt-5">
+        <router-link to="/registro">
+          <a>No estás aún registrado?</a>
+        </router-link>
+      </div> 
+    </form>
     </div>
   </div>
+
 </template>
 
 <script>
@@ -45,7 +31,8 @@ export default {
   data() {
     return{
       loginemail: "",
-      loginpass:""
+      loginpass:"",
+      passWrong: false
     }
   },
   created: function () {
@@ -55,11 +42,13 @@ export default {
         login(){
             auth.signInWithEmailAndPassword(this.loginemail,this.loginpass)
             .then((user)=>{
+              // alert("Logueado!")
               this.$router.replace("/perfilabogado")
                 // this.$router.replace("perfilabogado")
             })
             .catch((err)=>{
-              alert(err)
+              this.passWrong = true;
+              // alert(err)
           })
         },
         RedirectRegistry(){

@@ -25,7 +25,6 @@
         <div class="col-2">
           <button type="button" class="btn btn-primary btn-lg" v-on:click="Accept()">Aceptar</button>
         </div>
-        <div class="col-5"></div>
       </div>
     </div>
   </div>
