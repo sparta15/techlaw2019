@@ -1,7 +1,6 @@
 <template>
     <div class="container">
-         <h1>Lawyer Profile</h1>
-         <p>Aqui va el codigo para añadir votaciones</p>
+        <lawyer-navbar class="mt-3 mb-3"></lawyer-navbar>
     <form v-on:submit.prevent="createProposal">
       <div class="form-group">
         <label>Título del artículo</label>
@@ -18,15 +17,18 @@
         La propuesta se registró con éxito!
         </div>
     </div>
-        <button type="submit" class="btn btn-secondary mt-5" v-on:click="logout()">Cerrar sesión</button>
     </div>
 </template>
 
 <script>
-import {auth} from '../firebase'
+import {auth} from '../firebase';
 import { db } from "../firebase";
+import LawyerNavbar from './LawyerNavbar';
 
 export default {
+    components:{
+        LawyerNavbar
+    },
     data() {
         return{
             title:"",
@@ -38,7 +40,7 @@ export default {
         createProposal() {
             var uid = auth.currentUser.uid;
             var d = new Date()
-            db.ref("proposals").child(uid).set({title: this.title, description: this.description, date: d});
+            db.ref("proposals").child(uid).set({uid: uid, title: this.title, description: this.description, date: d});
             this.title = '';
             this.description = '';
             this.alertOk = true

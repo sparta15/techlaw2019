@@ -12,6 +12,11 @@
         <input type="password" class="form-control"  placeholder="Contraseña" v-model="loginpass">
       </div>
       <button type="submit" class="btn btn-primary">Acceder</button>
+      <div v-if="passWrong === true">
+        <div class="alert alert-danger mt-3" role="alert">
+        La contraseña es incorrecta!
+        </div>
+    </div>
       <div class="mt-5">
         <router-link to="/registro">
           <a>No estás aún registrado?</a>
