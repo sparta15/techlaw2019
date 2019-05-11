@@ -9,9 +9,6 @@
       <b-navbar-nav>
         <b-nav-item><router-link :to="{path:'/'}">Inicio</router-link></b-nav-item>
         <b-nav-item><router-link :to="{path:'/sobrenosotros'}">¿Quiénes somos?</router-link></b-nav-item>
-        <b-nav-item v-if="isLogin === true"><router-link :to="{path:'/perfilabogado'}">Mi perfil</router-link></b-nav-item>
-        <b-nav-item v-if="isLogin === true"><router-link :to="{path:'/propuestas'}">Propuestas</router-link></b-nav-item>
-        <b-nav-item v-if="isLogin === true"><router-link :to="{path:'/codigoconducta'}">Código de conducta</router-link></b-nav-item>
     </b-navbar-nav>
     </b-collapse>
   </b-navbar>
@@ -19,19 +16,12 @@
 </template>
 
 <script>
-import { auth } from '../firebase.js';
 export default {
   data() {
     return{
-      isLogin: false
+
     }
   },
-  created: function () {
-    this.isLogin = false;
-    if(auth.currentUser !== null) {
-      this.isLogin = true;
-    }
-  }
 }
 </script>
 
