@@ -4,8 +4,8 @@
     <div v-if="proposals !== undefined" class="container">
         <div v-for="(prop, index) in proposals" v-bind:key="index">
             <div>
-                <p><strong>Título{{ prop.title }}</strong></p>
-                <p>Descripción{{ prop.description }}</p>
+                <p><strong>Título: {{ prop.title }}</strong></p>
+                <p>Descripción: {{ prop.description }}</p>
                 <p>Votos: {{ prop.numberofvotes }}</p>
                 <button class="btn btn-success m-3" v-on:click="vote(prop)">Dar mi voto</button>
             </div>

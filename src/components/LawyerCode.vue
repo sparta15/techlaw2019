@@ -47,14 +47,22 @@ export default {
                     db.ref("lawyers").on("value", (snapshot) => {
                         let objlawyers = snapshot.val();
                         let resultlawyers = Object.keys(objlawyers)
-                            // Si el numero de votos de una propuesta supone por lo menos la mitad 50% de abogados de la plataforma, el artículo se añade al código de conducta
-                            if(obj[index].numberofvotes/resultlawyers.length >= 0.5) {
-                                  db.ref("articles").push(obj[index])
-                            }
+                             db.ref("lawyers").child("numberoflawyers").set(resultlawyers.length)
                         }, function (errorObject) {
                         console.log(errorObject);
                     });
-                    return obj[index].numberofvotes
+                    db.ref("lawyers").child("numberoflawyers").on("value", (snapshot) => {
+                        let numberoflawyers = snapshot.val()
+                            // Si el numero de votos de una propuesta supone por lo menos la mitad 50% de abogados de la plataforma, el artículo se añade al código de conducta
+                          if(obj[index].numberofvotes/numberoflawyers >= 0.5) {
+                                  db.ref("articles").push(obj[index])
+                        }
+                        }, function (errorObject) {
+                        console.log(errorObject);
+                    });
+                     
+                        return obj[index].description
+
                 });
 
                 }, function (errorObject) {
