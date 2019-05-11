@@ -6,7 +6,7 @@
             <div>
                 <p><strong>Título{{ prop.title }}</strong></p>
                 <p>Descripción{{ prop.description }}</p>
-                <p>Votos: {{ votes }}</p>
+                <p>Votos: {{ prop.numberofvotes }}</p>
                 <button class="btn btn-success m-3" v-on:click="vote(prop)">Dar mi voto</button>
             </div>
         </div>
@@ -25,7 +25,7 @@ export default {
     },
     data() {
         return{
-            votes: ""
+            
         }
     },
     firebase: {
@@ -36,15 +36,16 @@ export default {
     methods:{
         vote(prop){
             var uid =auth.currentUser.uid;
+            db.ref("proposals").child(prop.uid).child("votes").child(uid).push(uid);
+
             db.ref("proposals").child(prop.uid).child("votes").on("value", (snapshot) => {
                 let obj = snapshot.val();
                 let result = Object.keys(obj)
-                this.votes = result.length
+                db.ref("proposals").child(prop.uid).child("numberofvotes").set(result.length);
 
                 }, function (errorObject) {
                 console.log(errorObject);
             });
-            db.ref("proposals").child(prop.uid).child("votes").child(uid).set({uid: uid});
 
            
         },

@@ -40,7 +40,7 @@ export default {
         createProposal() {
             var uid = auth.currentUser.uid;
             var d = new Date()
-            db.ref("proposals").child(uid).set({uid: uid, title: this.title, description: this.description, date: d});
+            db.ref("proposals").child(uid).set({uid: uid, title: this.title, description: this.description, date: d, numberofvotes: 0});
             this.title = '';
             this.description = '';
             this.alertOk = true
