@@ -4,6 +4,7 @@ import Home from '../components/Home.vue';
 import About from '../components/About.vue';
 import Access from '../components/Access.vue';
 import Register from '../components/Register.vue';
+import Document from '../components/Document.vue';
 import CreateProposal from '../components/CreateProposal.vue';
 import ConfirmateProposal from '../components/ConfirmateProposal.vue';
 import LawyerProfile from '../components/LawyerProfile.vue';
@@ -33,6 +34,11 @@ export default new Router({
         path: '/registro',
         name: 'Register',
         component: Register,
+      },
+      {
+        path: '/documento',
+        name: 'Document',
+        component: Document,
       },
       {
         path: '/nuevapropuesta',
