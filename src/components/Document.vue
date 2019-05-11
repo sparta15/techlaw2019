@@ -1,5 +1,6 @@
 <template>
   <div class="container  mt-5">
+    <lawyer-navbar class="mt-3 mb-3"></lawyer-navbar>
     <div class="row">
       <div class="col-sm-4">
         <button type="button" class="btn btn-primary" v-on:click="CreateProposal()">Crear Propuesta</button>
@@ -9,7 +10,7 @@
           <div class="card-body">
             <h5 class="card-title">Primer artículo</h5>
             <p class="card-text">Será considerado abogado, al Licenciado en Derecho, el cual ejercerá la función de dirección y defensa de las partes en todo tipo de proceso, o el que asesore jurídicamente</p>
-              <button type="button" class="btn btn-primary" v-on:click="ReviewArticle()">Revisar</button>
+              <button type="button" class="btn btn-primary mb-2" v-on:click="ReviewArticle()">Revisar</button>
               <div class="progress">
                 <div class="progress-bar progress-bar-striped" role="progressbar" style="width: 50%" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100"></div>
               </div>
@@ -36,7 +37,7 @@
           <div class="card-body">
             <h5 class="card-title">Tercer artículo</h5>
             <p class="card-text">Todo ciudadano tendrá derecho a la defensa, según lo establecido en nuestra Carta Magna. Esto se conseguirá mediante el derecho a una tutela judicial efectiva, quien podrá optar a ello si cumple con los requisitos establecidos en la ley.</p>
-            <button type="button" class="btn btn-primary" v-on:click="ReviewArticle()">Revisar</button>
+            <button type="button" class="btn btn-primary mb-2" v-on:click="ReviewArticle()">Revisar</button>
             <div class="progress">
                 <div class="progress-bar progress-bar-striped" role="progressbar" style="width: 25%" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100"></div>
             </div>
@@ -50,8 +51,12 @@
 <script>
 import {auth} from '../firebase'
 import { db } from "../firebase";
+import LawyerNavbar from './LawyerNavbar';
 
 export default {
+    components:{
+        LawyerNavbar
+    },
   data() {
     return{
 

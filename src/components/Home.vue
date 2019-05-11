@@ -1,7 +1,7 @@
 <template>
   <div id="back-img" class="containerFluid text-center">
     <div class="jumbotron">
-    <h1>Colabora redactando el código de deontológico de la Abogacía</h1>
+    <h1>Colabora redactando el código deontológico de la Abogacía</h1>
     <p>¿Eres Abogado? Regístrate</p>
     <router-link :to="{path:'/acceso'}">
     <button class="btn btn-dark btn-lg">Acceder</button>

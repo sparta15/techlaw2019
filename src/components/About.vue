@@ -12,7 +12,7 @@
   <div class="card">
   <div class="card-body">
     <h5 class="card-title">Guillermo Pastor Diez</h5>
-    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+    <p class="card-text">Guillermo Pastor Diez, Service Release Engineer en Cuarta Platforma, Telefonica </p>
   <a href="https://www.linkedin.com/in/guillermopastordiez/" target="_blank">
     <i class="fab fa-linkedin fa-2x"></i>
   </a>  
@@ -21,8 +21,8 @@
   <div class="card">
   <div class="card-body">
     <h5 class="card-title">Jennifer Arranz</h5>
-    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-  <a href="#" target="_blank">
+    <p class="card-text">Estudiante de último año en Derecho y apasionada de las nuevas tecnologías.</p>
+  <a href="https://www.linkedin.com/in/jennifer-arranz-villagrá-751b34149/" target="_blank">
     <i class="fab fa-linkedin fa-2x"></i>
   </a>  
   </div>
