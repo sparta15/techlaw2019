@@ -59,7 +59,7 @@ export default {
       //Code to increment counter
     },
     CreateProposal(){
-      this.$router.replace("/nuevapropuesta")
+      this.$router.replace("/perfilabogado")
     }
   }
 }
